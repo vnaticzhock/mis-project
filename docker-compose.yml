@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mis-postgres:
+    image: "postgres:14.5-alpine"
+    container_name: mis-db
+    volumes:
+      - mis-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=mis
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234
+
+volumes:
+  mis-data:
